@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskFlow | Productivity Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app">
+    <aside class="sidebar">
+        <h2>⚡ TaskFlow</h2>
+        <p class="muted">PRODUCTIVITY</p>
+
+        <nav>
+            <button class="nav active" data-filter="all">📋 All Tasks</button>
+            <button class="nav" data-filter="pending">⏳ Pending</button>
+            <button class="nav" data-filter="completed">✅ Completed</button>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <button id="themeBtn">🌙 Toggle Theme</button>
+            <button id="exportBtn">📥 Export CSV</button>
+        </div>
+    </aside>
+
+    <main class="main">
+        <header>
+            <div>
+                <h1>My Workspace 👋</h1>
+                <p class="muted">Organize your day. Achieve your goals.</p>
+            </div>
+            <span id="today"></span>
+        </header>
+
+        <section class="stats">
+            <div class="stat">
+                <p>Total Tasks</p>
+                <h2 id="total">0</h2>
+            </div>
+            <div class="stat">
+                <p>Pending</p>
+                <h2 id="pending">0</h2>
+            </div>
+            <div class="stat">
+                <p>Completed</p>
+                <h2 id="completed">0</h2>
+            </div>
+            <div class="stat">
+                <p>Progress</p>
+                <h2 id="progress">0%</h2>
+            </div>
+        </section>
+
+        <section class="task-section">
+            <div class="section-heading">
+                <h2 id="listTitle">All Tasks</h2>
+                <input type="search" id="search"
+                    placeholder="🔍 Search tasks...">
+            </div>
+
+            <form id="taskForm">
+                <input type="text" id="taskInput"
+                    placeholder="Enter a new task..." required>
+
+                <select id="priority">
+                    <option value="Low">Low</option>
+                    <option value="Medium" selected>Medium</option>
+                    <option value="High">High</option>
+                </select>
+
+                <input type="date" id="deadline" required>
+                <button type="submit" class="add-btn">+ Add Task</button>
+            </form>
+
+            <div id="taskList"></div>
+
+            <p id="emptyMessage">No tasks found. Add your first task!</p>
+        </section>
+    </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
